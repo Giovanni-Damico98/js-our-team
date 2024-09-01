@@ -37,3 +37,19 @@ const teamMembers = [
     image: "barbara-ramos-graphic-designer.jpg ",
   },
 ];
+const list = document.querySelector("ul");
+
+let items = "";
+
+for (let member of teamMembers) {
+  console.log(`${member.name}, ${member.role}, ${member.image}`);
+  items += `<li>
+              <ul class="list-unstyled">
+                <li>${member.name}</li>
+                <li>${member.role}</li>
+                <li><img src="img/${member.image}" alt=${member.name}</li>
+              </ul>
+            </li>`;
+}
+
+list.innerHTML = items;
