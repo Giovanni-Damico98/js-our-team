@@ -37,19 +37,37 @@ const teamMembers = [
     image: "barbara-ramos-graphic-designer.jpg ",
   },
 ];
-const list = document.querySelector("ul");
+// Raccolta elementi
+const teamContainer = document.querySelector(".team-container");
+// Elaborazione
+let cards = "";
 
-let items = "";
-
-for (let member of teamMembers) {
-  console.log(`${member.name}, ${member.role}, ${member.image}`);
-  items += `<li>
-              <ul class="list-unstyled">
-                <li>${member.name}</li>
-                <li>${member.role}</li>
-                <li><img src="img/${member.image}" alt=${member.name}</li>
-              </ul>
-            </li>`;
+for (const member of teamMembers) {
+  cards += `<div class="team-card">
+            <div class="card-img">
+              <img src="img/${member.image}" alt=${member.name}>
+            </div>
+            <div class="card-text text-center">
+              <h3>${member.name}</h3>
+              <p>${member.role}</p>
+            </div>
+          </div>`;
 }
+teamContainer.innerHTML = cards;
 
-list.innerHTML = items;
+// const list = document.querySelector("ul");
+
+// let items = "";
+
+// for (let member of teamMembers) {
+//   console.log(`${member.name}, ${member.role}, ${member.image}`);
+//   items += `<li>
+//               <ul class="list-unstyled">
+//                 <li>${member.name}</li>
+//                 <li>${member.role}</li>
+//                 <li><img src="img/${member.image}" alt=${member.name}></li>
+//               </ul>
+//             </li>`;
+// }
+
+// list.innerHTML = items;
